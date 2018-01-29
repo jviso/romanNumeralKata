@@ -31,4 +31,9 @@ public class RomanToArabicTest {
         assertEquals(5, romanToArabic.calculate("V"));
     }
 
+    @Test
+    public void calculateShouldReturn4ForIV() {
+        assertEquals(4, romanToArabic.calculate("IV"));
+    }
+
 }
