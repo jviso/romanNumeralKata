@@ -9,6 +9,10 @@ public class RomanToArabic {
               value += 4;
               i++;
           }
+          else if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'X') {
+              value += 9;
+              i++;
+          }
           else if (numeral.charAt(i) == 'I') {
               value += 1;
           }
