@@ -15,6 +15,9 @@ public class RomanToArabic {
           else if (numeral.charAt(i) == 'V') {
               value += 5;
           }
+          else if (numeral.charAt(i) == 'X') {
+              value += 10;
+          }
       }
 
       return value;
