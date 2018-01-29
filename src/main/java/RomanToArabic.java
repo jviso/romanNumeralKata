@@ -1,10 +1,16 @@
 public class RomanToArabic {
 
   public int calculate(String numeral) {
-      if (numeral.equals("II")) {
-          return 2;
+
+      int value = 0;
+
+      for (int i = 0; i < numeral.length(); i++) {
+          if (numeral.charAt(i) == 'I') {
+              value += 1;
+          }
       }
-      return 1;
+
+      return value;
   }
 
 }

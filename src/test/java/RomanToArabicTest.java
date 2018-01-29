@@ -15,4 +15,10 @@ public class RomanToArabicTest {
         assertEquals(2, romanToArabic.calculate("II"));
     }
 
+    @Test
+    public void calculateShouldReturn3ForIII() {
+        RomanToArabic romanToArabic = new RomanToArabic();
+        assertEquals(3, romanToArabic.calculate("III"));
+    }
+
 }
