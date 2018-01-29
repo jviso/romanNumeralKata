@@ -8,6 +8,9 @@ public class RomanToArabic {
           if (numeral.charAt(i) == 'I') {
               value += 1;
           }
+          else if (numeral.charAt(i) == 'V') {
+              value += 5;
+          }
       }
 
       return value;
