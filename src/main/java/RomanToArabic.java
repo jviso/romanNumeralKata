@@ -1,30 +1,37 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanToArabic {
 
-  public int calculate(String numeral) {
+    private Map<Character, Integer> letterValues;
 
-      int value = 0;
+    public RomanToArabic() {
+        letterValues = new HashMap<>();
+        letterValues.put('I', 1);
+        letterValues.put('V', 5);
+        letterValues.put('X', 10);
+    }
 
-      for (int i = 0; i < numeral.length(); i++) {
-          if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'V') {
-              value += 4;
-              i++;
-          }
-          else if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'X') {
-              value += 9;
-              i++;
-          }
-          else if (numeral.charAt(i) == 'I') {
-              value += 1;
-          }
-          else if (numeral.charAt(i) == 'V') {
-              value += 5;
-          }
-          else if (numeral.charAt(i) == 'X') {
-              value += 10;
-          }
-      }
 
-      return value;
-  }
+    public int calculate(String numeral) {
+
+        int value = 0;
+
+        for (int i = 0; i < numeral.length(); i++) {
+            if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'V') {
+                value += 4;
+                i++;
+            }
+            else if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'X') {
+                value += 9;
+                i++;
+            }
+            else {
+                value += letterValues.get((numeral.charAt(i)));
+            }
+        }
+
+        return value;
+    }
 
 }
