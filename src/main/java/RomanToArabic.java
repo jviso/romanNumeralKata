@@ -10,6 +10,7 @@ public class RomanToArabic {
         letterValues.put('I', 1);
         letterValues.put('V', 5);
         letterValues.put('X', 10);
+        letterValues.put('L', 50);
     }
 
 
