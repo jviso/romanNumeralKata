@@ -18,13 +18,8 @@ public class RomanToArabic {
         int value = 0;
 
         for (int i = 0; i < numeral.length(); i++) {
-            if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'V') {
-                value += 4;
-                i++;
-            }
-            else if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) == 'X') {
-                value += 9;
-                i++;
+            if (i+1 < numeral.length() && numeral.charAt(i) == 'I' && numeral.charAt(i+1) != 'I') {
+                value -= 1;
             }
             else {
                 value += letterValues.get((numeral.charAt(i)));
