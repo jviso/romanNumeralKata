@@ -4,6 +4,7 @@ import java.util.Map;
 public class RomanToArabic {
 
     private Map<Character, Integer> letterValues;
+    private int value;
 
     public RomanToArabic() {
         letterValues = new HashMap<>();
@@ -19,14 +20,12 @@ public class RomanToArabic {
 
     public int calculate(String numeral) {
 
-        int value = 0;
-
         for (int i = 0; i < numeral.length(); i++) {
             if (isSubtractionNeeded(i, numeral)) {
                 value -= 1;
             }
             else {
-                value += letterValues.get((numeral.charAt(i)));
+                addLetterValue(numeral.charAt(i));
             }
         }
 
@@ -37,6 +36,10 @@ public class RomanToArabic {
         return (currentIndex+1 < numeral.length() &&
                 numeral.charAt(currentIndex) == 'I' &&
                 numeral.charAt(currentIndex + 1) != 'I');
+    }
+
+    private void addLetterValue(char letter) {
+        value += letterValues.get(letter);
     }
 
 }
