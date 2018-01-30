@@ -11,6 +11,7 @@ public class RomanToArabic {
         letterValues.put('V', 5);
         letterValues.put('X', 10);
         letterValues.put('L', 50);
+        letterValues.put('C', 100);
     }
 
 
