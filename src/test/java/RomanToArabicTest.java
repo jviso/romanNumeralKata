@@ -58,4 +58,9 @@ public class RomanToArabicTest {
         assertEquals(100, romanToArabic.calculate("C"));
     }
 
+    @Test
+    public void calculateShouldReturn273ForCCILXXIV() {
+        assertEquals(273, romanToArabic.calculate("CCILXXIV"));
+    }
+
 }
