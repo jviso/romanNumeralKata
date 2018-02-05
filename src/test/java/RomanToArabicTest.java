@@ -1,6 +1,5 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 import static org.junit.Assert.assertEquals;
 
@@ -51,6 +50,11 @@ public class RomanToArabicTest {
     @Test
     public void calculateShouldReturn50ForL() {
         assertEquals(50, romanToArabic.calculate("L"));
+    }
+
+    @Test
+    public void calculateShouldReturn40ForXL() {
+        assertEquals(40, romanToArabic.calculate("XL"));
     }
 
     @Test

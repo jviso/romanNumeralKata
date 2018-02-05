@@ -22,7 +22,7 @@ public class RomanToArabic {
 
         for (int i = 0; i < numeral.length(); i++) {
             if (isSubtractionNeeded(i, numeral)) {
-                value -= 1;
+                value -= letterValues.get(numeral.charAt(i));
             }
             else {
                 addLetterValue(numeral.charAt(i));
@@ -34,8 +34,8 @@ public class RomanToArabic {
 
     private boolean isSubtractionNeeded(int currentIndex, String numeral) {
         return (currentIndex+1 < numeral.length() &&
-                numeral.charAt(currentIndex) == 'I' &&
-                numeral.charAt(currentIndex + 1) != 'I');
+                letterValues.get(numeral.charAt(currentIndex)) <
+                letterValues.get(numeral.charAt(currentIndex + 1)));
     }
 
     private void addLetterValue(char letter) {
